@@ -92,30 +92,23 @@ for (let i = 0; i < 9; i ++) {
   if (i === 0) {
     div.classList.add('ctrl');
     div.innerHTML = 'Ctrl';
-  }
-  if (i === 1 || i === 5) {
+  } if (i === 1 || i === 5) {
     div.innerHTML = 'Alt';
-  }
-  if (i === 2) {
+  }  if (i === 2) {
     div.classList.add('lang');
-  }
-  if (i === 3) {
+  } if (i === 3) {
     div.classList.add('char');
     div.classList.add('space');
-  }
-  if (i === 4) {
+  } if (i === 4) {
     div.classList.add('light');
     div.innerHTML = '&#9788;';
-  }
-  if (i === 6) {
+  } if (i === 6) {
     div.classList.add('left');
     div.innerHTML = '&#8592;';
-  }
-  if (i === 7) {
+  } if (i === 7) {
     div.classList.add('down');
     div.innerHTML = '&#8595;';
-  }
-  if (i === 8) {
+  } if (i === 8) {
     div.classList.add('right');
     div.innerHTML = '&#8594;';
   }
@@ -125,9 +118,6 @@ const capsShiftKeyRu = [...'!"№;%:?*()_+йцукенгшщзхъё/фывап�
 const defaultKeyRu = [...']1234567890-=йцукенгшщзхъё\фывапролджэячсмитьбю/ '.split(''), 'ru'];
 const defaultKey = [...'`1234567890-=qwertyuiop[]\\asdfghjkl;\'zxcvbnm,./ '.split(''), 'en'];
 const capsShiftKey = [...'~!@#$%^&*()_+qwertyuiop{}|asdfghjkl:"zxcvbnm<>? '.split(''), 'en'];
-
-const charCode = ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 'Digit6', 'Digit7', 'Digit8', 'Digit9', 'Digit0', 'Minus', 'Equal', 'Backspace', 'Tab', 'KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU', 'KeyI', 'KeyO', 'KeyP', 'BracketLeft', 'BracketRight', 'Backslash', 'CapsLock', 'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL', 'Semicolon', 'Quote', 'Enter', 'ShiftLeft', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'Slash', 'ArrowUp', 'ShiftRight', 'ControlLeft', 'AltLeft', '', 'Space', '', 'AltRight', 'ArrowLeft', 'ArrowDown', 'ArrowRight'];
-
 const input = document.querySelector('textarea');
 const char = document.querySelectorAll('.char');
 const shift = document.querySelector('.shift');
@@ -135,6 +125,71 @@ const key = document.querySelectorAll('.key');
 const back = document.querySelector('.back');
 const caps = document.querySelector('.caps');
 const lang = document.querySelector('.lang');
+const charCode = [
+  'Backquote', 
+  'Digit1', 
+  'Digit2', 
+  'Digit3', 
+  'Digit4', 
+  'Digit5', 
+  'Digit6', 
+  'Digit7', 
+  'Digit8', 
+  'Digit9', 
+  'Digit0', 
+  'Minus', 
+  'Equal', 
+  'Backspace', 
+  'Tab', 
+  'KeyQ', 
+  'KeyW', 
+  'KeyE', 
+  'KeyR', 
+  'KeyT', 
+  'KeyY', 
+  'KeyU', 
+  'KeyI', 
+  'KeyO', 
+  'KeyP', 
+  'BracketLeft', 
+  'BracketRight', 
+  'Backslash', 
+  'CapsLock', 
+  'KeyA', 
+  'KeyS', 
+  'KeyD', 
+  'KeyF', 
+  'KeyG', 
+  'KeyH', 
+  'KeyJ', 
+  'KeyK', 
+  'KeyL', 
+  'Semicolon', 
+  'Quote', 
+  'Enter', 
+  'ShiftLeft', 
+  'KeyZ', 
+  'KeyX', 
+  'KeyC', 
+  'KeyV', 
+  'KeyB', 
+  'KeyN', 
+  'KeyM', 
+  'Comma', 
+  'Period', 
+  'Slash', 
+  'ArrowUp', 
+  'ShiftRight',
+  'ControlLeft', 
+  'AltLeft', 
+  '', 
+  'Space', 
+  '', 
+  'AltRight', 
+  'ArrowLeft', 
+  'ArrowDown', 
+  'ArrowRight'
+];
 
 function createKeys(keyboardLayout, register) {
   for (let i = 0; i < char.length; i ++) {
@@ -151,26 +206,19 @@ function createKeys(keyboardLayout, register) {
 function checkStatusKeyboard() {
   if (caps.classList.contains('on') && shift.classList.contains('on') && lang.classList.contains('ru')) {
     createKeys(capsShiftKeyRu);
-  }
-  if (caps.classList.contains('on') && shift.classList.contains('on') && !lang.classList.contains('ru')) {
+  } if (caps.classList.contains('on') && shift.classList.contains('on') && !lang.classList.contains('ru')) {
     createKeys(capsShiftKey);
-  }
-  if (!caps.classList.contains('on') && !shift.classList.contains('on') && lang.classList.contains('ru')) {
+  } if (!caps.classList.contains('on') && !shift.classList.contains('on') && lang.classList.contains('ru')) {
     createKeys(defaultKeyRu);
-  }
-  if (!caps.classList.contains('on') && !shift.classList.contains('on') && !lang.classList.contains('ru')) {
+  } if (!caps.classList.contains('on') && !shift.classList.contains('on') && !lang.classList.contains('ru')) {
     createKeys(defaultKey);
-  }
-  if (!caps.classList.contains('on') && shift.classList.contains('on') && lang.classList.contains('ru')) {
+  } if (!caps.classList.contains('on') && shift.classList.contains('on') && lang.classList.contains('ru')) {
     createKeys(capsShiftKeyRu, true);
-  }
-  if (!caps.classList.contains('on') && shift.classList.contains('on') && !lang.classList.contains('ru')) {
+  } if (!caps.classList.contains('on') && shift.classList.contains('on') && !lang.classList.contains('ru')) {
     createKeys(capsShiftKey, true);
-  }
-  if (caps.classList.contains('on') && !shift.classList.contains('on') && lang.classList.contains('ru')) {
+  } if (caps.classList.contains('on') && !shift.classList.contains('on') && lang.classList.contains('ru')) {
     createKeys(defaultKeyRu, true);
-  }
-  if (caps.classList.contains('on') && !shift.classList.contains('on') && !lang.classList.contains('ru')) {
+  } if (caps.classList.contains('on') && !shift.classList.contains('on') && !lang.classList.contains('ru')) {
     createKeys(defaultKey, true);
   }
 }
@@ -311,8 +359,8 @@ document.querySelector('.right').addEventListener('click', () => {
 });
 
 document.querySelector('.down').addEventListener('click', () => {
-  let next; let
-    current;
+  let next; 
+  let current;
   for (let i = input.selectionStart; i < input.value.length; i += 1) {
     if (input.value[i] === '\n') {
       for (let j = i - 1; j > 0; j -= 1) {
@@ -335,8 +383,8 @@ document.querySelector('.down').addEventListener('click', () => {
 });
 
 document.querySelector('.up').addEventListener('click', () => {
-  let previous; let
-    current;
+  let previous; 
+  let current;
   for (let i = input.selectionStart - 1; i > 0; i -= 1) {
     if (input.value[i] === '\n') {
       for (let j = i + 1; j < input.value.length; j += 1) {
@@ -368,24 +416,22 @@ document.addEventListener('keydown', (event) => {
         event.preventDefault();
         const cursorPosition = input.selectionStart;
         if (input.selectionStart === input.selectionEnd) {
-          input.value = `${input.value.slice(0, cursorPosition)}    ${input.value.slice(cursorPosition)}`;
+          input.value = `${input.value.slice(0, cursorPosition)} ${input.value.slice(cursorPosition)}`;
           input.selectionStart = cursorPosition + 4;
           input.selectionEnd = input.selectionStart;
         } else {
-          input.value = `${input.value.slice(0, cursorPosition)}    ${input.value.slice(input.selectionEnd)}`;
+          input.value = `${input.value.slice(0, cursorPosition)} ${input.value.slice(input.selectionEnd)}`;
           input.selectionStart = cursorPosition + 4;
           input.selectionEnd = input.selectionStart;
         }
       }
       if (event.code === 'AltLeft') {
         event.preventDefault();
-      }
-      if (event.code === 'CapsLock') {
+      } if (event.code === 'CapsLock') {
         caps.classList.toggle('on');
         checkStatusKeyboard();
         break;
-      }
-      if (event.code === 'ShiftLeft') {
+      } if (event.code === 'ShiftLeft') {
         shift.classList.toggle('on');
         checkStatusKeyboard();
         break;
@@ -404,8 +450,7 @@ if (keyLocalStorage) {
   if (keyLocalStorage === 'ru') {
     lang.classList.add('ru');
     checkStatusKeyboard();
-  }
-  if (keyLocalStorage === 'en') {
+  } if (keyLocalStorage === 'en') {
     lang.classList.remove('ru');
     checkStatusKeyboard();
   }

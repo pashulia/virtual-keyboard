@@ -111,9 +111,9 @@
   
   .line-through::before {
     content: "";
-      border-bottom: 2px solid #dfdfdf;
-      position: absolute;
-      width: 25%;
+    border-bottom: 2px solid #dfdfdf;
+    position: absolute;
+    width: 25%;
     top: 45%;
     left: 38%;
       transform: rotate(40deg);
